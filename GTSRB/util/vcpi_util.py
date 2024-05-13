@@ -27,7 +27,7 @@ def show_history(history):
     for key in history.keys():
     
         # summarize history for accuracy
-        plt.plot(history['accuracy'])
+        plt.plot(history[key])
         plt.title(key)
         plt.ylabel(key)
         plt.xlabel('epoch')
@@ -71,9 +71,10 @@ def show_histogram(data, classes):
     values = [res[x] for x in range(len(classes))]
     indexes = np.arange(len(classes))
 
+    plt.figure(figsize=(25, 14))
 
     plt.bar(indexes, values, 1)
-    plt.xticks(indexes , classes, rotation=45, ha='right')
+    plt.xticks(indexes , classes, rotation=90, ha='right')
     plt.show()   
 
 
@@ -83,7 +84,7 @@ def show_confusion_matrix(ground_truth, preds, num_classes):
 
 
     df_cm = pd.DataFrame(cf_matrix / np.sum(cf_matrix, axis=1)[:, None], range(num_classes), range(num_classes))
-    plt.figure(figsize=(12,6))
+    plt.figure(figsize=(30,20))
 
     sn.heatmap(df_cm, annot=True, annot_kws={"size": 10} , fmt='.3f') # font size
 
@@ -201,5 +202,4 @@ def plot_predictions(images, predictions, ground_truth, classes, num_rows= 5, nu
         plot_value_array(i, predictions[i], ground_truth, len(classes))
     plt.tight_layout()
     plt.show()
-
 
