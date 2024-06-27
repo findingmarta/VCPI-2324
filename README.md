@@ -8,4 +8,5 @@ Repositório destinado a guardar o trabalho realizado na cadeira de Visualizaç�
 | PG53879  | [Inês Ferreira](https://github.com/inesferreira18) |
 | PG54084  | [Marta Sá](https://github.com/findingmarta)        |
 
-Nota Final: 18
+Nota PI: 15
+Nota VC: 18
